@@ -1,5 +1,11 @@
 var Thermostat = function() {};
 
-Thermostat.prototype.temperature = function() {
-  return 20
+var temperature = 20;
+
+Thermostat.prototype.show = function() {
+  return temperature;
+};
+
+Thermostat.prototype.up = function() {
+  temperature += 1
 };
