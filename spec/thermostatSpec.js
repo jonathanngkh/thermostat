@@ -15,5 +15,10 @@ describe('Thermostat', function() {
       thermostat.up();
       expect(thermostat.show()).toEqual(21);
     });
+
+    it('can be decreased by 1', function() {
+      thermostat.down();
+      expect(thermostat.show()).toEqual(19);
+    });
   });
 });
