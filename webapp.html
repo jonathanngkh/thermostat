@@ -15,8 +15,8 @@
   <button onclick="thermostat.up(); document.getElementById('temperature').innerHTML=thermostat.show();">Up</button>
 
 
-  <button onclick="getElementById('decrease')">Down</button>
+  <button onclick="thermostat.down(); document.getElementById('temperature').innerHTML=thermostat.show();">Down</button>
 
-  <label><input type='checkbox' onclick='' checked>Power Saving</label>
+  <label><input type='checkbox' onclick="thermostat.switchMode(); document.getElementById('temperature').innerHTML=thermostat.show();" checked>Power Saving</label>
 </body>
 </html>

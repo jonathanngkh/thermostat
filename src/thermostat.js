@@ -24,6 +24,9 @@ Thermostat.prototype.down = function() {
 
 Thermostat.prototype.switchMode = function() {
   this.powerSavingMode = !this.powerSavingMode
+  if (this.temperature > 25) {
+    this.temperature = 25;
+  };
 };
 
 Thermostat.prototype.resetTemperature = function() {
