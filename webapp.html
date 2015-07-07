@@ -7,15 +7,13 @@
 </head>
 
 <body>
-  <p id="temperature"></p>
-  
-    <script type="text/JavaScript">var thermostat = new Thermostat();
-  document.write(thermostat.show());</script>
+  <p id='temperature'></p>
 
-  <button onclick="increaseTemperature()">Up</button>
+  <script>var thermostat = new Thermostat();
+  document.getElementById('temperature').innerHTML=thermostat.show();</script>
 
-  <script>function increaseTemperature() { document.getElementById("temperature").innerHTML=thermostat.up();}
-  </script>
+  <button onclick="thermostat.up(); document.getElementById('temperature').innerHTML=thermostat.show();">Up</button>
+
 
   <button onclick="getElementById('decrease')">Down</button>
 
