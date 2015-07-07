@@ -17,6 +17,8 @@
 
   <button onclick="thermostat.down(); document.getElementById('temperature').innerHTML=thermostat.show();">Down</button>
 
+  <button onclick="thermostat.resetTemperature(); document.getElementById('temperature').innerHTML=thermostat.show();">Reset</button>
+
   <label><input type='checkbox' onclick="thermostat.switchMode(); document.getElementById('temperature').innerHTML=thermostat.show();" checked>Power Saving</label>
 </body>
 </html>
