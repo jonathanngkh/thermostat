@@ -4,33 +4,20 @@
   <title>Thermostat</title>
   <!-- source file -->
   <script type="text/javascript" src="src/thermostat.js"></script>
+  <script type="text/javascript" src="src/app.js" ></script>
 </head>
 
 <body>
   <p id='temperature'></p>
 
-  <script>
-  var thermostat = new Thermostat();
-  document.getElementById('temperature').innerHTML=thermostat.show();
-  document.getElementById('temperature').style.color='orange';
+  <script>ShowingTemperature()</script>
 
-  </script>
+  <button onclick= "RaisingTemperature()">Up</button>
 
-  <button onclick="thermostat.up(); document.getElementById('temperature').innerHTML=thermostat.show(); if (thermostat.temperature > 17) { document.getElementById('temperature').style.color = 'orange';
-  };
-  if (thermostat.temperature > 24) { document.getElementById('temperature').style.color='red';
-  };">Up</button>
+  <button onclick="LoweringTemperature()">Down</button>
 
+  <button onclick="ResettingTemperature()">Reset</button>
 
-  <button onclick="thermostat.down();
-  document.getElementById('temperature').innerHTML=thermostat.show(); if (thermostat.temperature < 25) { document.getElementById('temperature').style.color = 'orange';
-   if (thermostat.temperature < 18) { document.getElementById('temperature').style.color='lime';
-  };
-  };">Down</button>
-
-  <button onclick="thermostat.resetTemperature(); document.getElementById('temperature').innerHTML=thermostat.show(); if (thermostat.temperature > 17) { document.getElementById('temperature').style.color = 'orange';
-  };">Reset</button>
-
-  <label><input type='checkbox' onclick="thermostat.switchMode(); document.getElementById('temperature').innerHTML=thermostat.show();" checked>Power Saving</label>
+  <label><input type='checkbox' onclick="PowerSavingMode()" checked>Power Saving</label>
 </body>
 </html>
