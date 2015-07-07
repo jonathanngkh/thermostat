@@ -7,10 +7,18 @@
 </head>
 
 <body>
-  <p><script type="text/JavaScript">var thermostat = new Thermostat();
-  document.write(thermostat.show());</script></p>
-  <button onclick="getElementById('increase')">Up</button>
+  <p id="temperature"></p>
+  
+    <script type="text/JavaScript">var thermostat = new Thermostat();
+  document.write(thermostat.show());</script>
+
+  <button onclick="increaseTemperature()">Up</button>
+
+  <script>function increaseTemperature() { document.getElementById("temperature").innerHTML=thermostat.up();}
+  </script>
+
   <button onclick="getElementById('decrease')">Down</button>
+
   <label><input type='checkbox' onclick='' checked>Power Saving</label>
 </body>
 </html>
