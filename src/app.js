@@ -1,31 +1,49 @@
 var thermostat = new Thermostat();
 
-var ShowingTemperature = function(){
-  document.getElementById('temperature').innerHTML = thermostat.show();
-  document.getElementById('temperature').style.color = 'orange';
-};
+  var buttons = $('.controller_button');
 
-var RaisingTemperature = function(){
-  thermostat.up();
-  document.getElementById('temperature').innerHTML=thermostat.show(); 
-  if (thermostat.temperature > 17) { document.getElementById('temperature').style.color = 'orange';};
-  if (thermostat.temperature > 24) { document.getElementById('temperature').style.color='red';};
-};
+  $('#temperature').html(thermostat.show());
 
-var LoweringTemperature = function(){
-  thermostat.down();
-  document.getElementById('temperature').innerHTML=thermostat.show();
-  if (thermostat.temperature < 25) { document.getElementById('temperature').style.color = 'orange';};
-  if (thermostat.temperature < 18) { document.getElementById('temperature').style.color='lime';};
-};
+  $('.powerSavingBox').change(function() {
+    thermostat.switchMode();
+  });
 
-var ResettingTemperature = function(){
-  thermostat.resetTemperature();
-  document.getElementById('temperature').innerHTML=thermostat.show();
-  if (thermostat.temperature > 17) { document.getElementById('temperature').style.color = 'orange';};
-};
+  var increaseTemperature = function() {
+    thermostat.up();
+    colorChanger();
+    $('#temperature').html(thermostat.show());
+  };
 
-var PowerSavingMode = function(){
-  thermostat.switchMode();
-  document.getElementById('temperature').innerHTML=thermostat.show();
-};
+  var decreaseTemperature = function() {
+    thermostat.down();
+    colorChanger();
+    $('#temperature').html(thermostat.show());
+  };
+
+  var resetTemp = function() {
+    thermostat.resetTemperature();
+    colorChanger();
+    $('#temperature').html(thermostat.show());
+  };
+
+  var colorChanger = function() {
+    var checkTemperature = thermostat.show();
+    if (checkTemperature < 18) {
+      $('#temperature').removeClass();
+      $('#temperature').addClass('green');
+    };
+    if (checkTemperature > 24) {
+      $('#temperature').removeClass();
+      $('#temperature').addClass('red');
+    }
+    if (checkTemperature < 24 && checkTemperature > 17) {
+      $('#temperature').removeClass();
+      $('#temperature').addClass('orange');
+    }
+  };
+
+$(buttons[0]).click(increaseTemperature);
+$(buttons[1]).click(decreaseTemperature);
+$(buttons[2]).click(resetTemp);
+
+

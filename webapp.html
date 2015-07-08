@@ -2,22 +2,22 @@
 <html>
 <head>
   <title>Thermostat</title>
-  <!-- source file -->
-  <script type="text/javascript" src="src/thermostat.js"></script>
-  <script type="text/javascript" src="src/app.js" ></script>
+  <link rel='stylesheet' type='text/css' href='src/stylesheets/index.css'>
 </head>
 
 <body>
-  <p id='temperature'></p>
+  <p id='temperature' class='orange'></p>
 
-  <script>ShowingTemperature()</script>
+  <button class='controller_button'>Up</button>
 
-  <button onclick= "RaisingTemperature()">Up</button>
+  <button class='controller_button'>Down</button>
 
-  <button onclick="LoweringTemperature()">Down</button>
+  <button class="controller_button">Reset</button>
 
-  <button onclick="ResettingTemperature()">Reset</button>
+  <label><input type='checkbox' class='powerSavingBox' checked>Power Saving</label>
 
-  <label><input type='checkbox' onclick="PowerSavingMode()" checked>Power Saving</label>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="src/thermostat.js"></script>
+  <script type="text/javascript" src="src/app.js" ></script>
 </body>
 </html>
