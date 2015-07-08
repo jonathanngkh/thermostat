@@ -2,6 +2,23 @@ var thermostat = new Thermostat();
 
   var buttons = $('.controller_button');
 
+  var name = 'London'
+
+  var cityTemperature = function() {
+    $.getJSON('http://api.openweathermap.org/data/2.5/find?q=' + name + '&units=metric',
+    function(responseObject) {
+      $('#cityWeather').html(responseObject.list[0].main.temp);
+      $('#cityActual').html(responseObject.list[0].name);
+    });
+  };
+
+  $('#citySubmit').click(function() {
+    name = $('#cityForm').val();
+    cityTemperature();
+  });
+
+  cityTemperature();
+
   $('#temperature').html(thermostat.show());
 
   $('.powerSavingBox').change(function() {
@@ -45,5 +62,3 @@ var thermostat = new Thermostat();
 $(buttons[0]).click(increaseTemperature);
 $(buttons[1]).click(decreaseTemperature);
 $(buttons[2]).click(resetTemp);
-
-
