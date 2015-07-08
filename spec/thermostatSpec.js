@@ -59,4 +59,8 @@ describe('Thermostat', function() {
     expect(thermostat.show()).toEqual(20);
   });
 
+  it('displays default temperature', function() {
+    expect('#temperature').toContainText('20');
+  });
+
 });
