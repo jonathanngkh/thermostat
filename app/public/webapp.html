@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thermostat</title>
+  <link rel='stylesheet' type='text/css' href='stylesheets/index.css'>
+</head>
+
+<body>
+  <label>City: </label><input id='cityForm' type='text'>
+  <input id='citySubmit' type='submit' value='Submit'>
+
+  <p>The temperature in <span id='cityActual'>London</span> is <span id='cityWeather'></span></p>
+
+  <p>Thermostat temperature: <span id='temperature' class='orange'></span></p>
+
+  <button class='controller_button'>Up</button>
+
+  <button class='controller_button'>Down</button>
+
+  <button class="controller_button">Reset</button>
+
+  <label><input type='checkbox' class='powerSavingBox' checked>Power Saving</label>
+
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="thermostat.js"></script>
+  <script type="text/javascript" src="app.js" ></script>
+</body>
+</html>
