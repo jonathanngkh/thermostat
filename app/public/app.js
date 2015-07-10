@@ -1,3 +1,5 @@
+
+
 var thermostat = new Thermostat();
 var buttons = $('.controller_button');
 var name = 'London'
@@ -15,11 +17,12 @@ var currentTemperature = function() {
     function(response) {
       var roundedTemp = Math.floor(response.main.temp);
       $('#geoTemperature').html(roundedTemp + '&#8451;');
-      $('#geoLocation').html(response.name);
+      $('#geoLocation').html(response.name + ':');
   });
 };
 
-$('#geoLocation').html('\r\n')
+$('#first').fadeIn();
+$('#second').fadeIn();
 
 navigator.geolocation.getCurrentPosition(currentLocation);
 
@@ -40,8 +43,8 @@ cityTemperature();
 
 $('#temperature').html(thermostat.show());
 
-$('#powerSavingBox').click(function() {
-  thermostat.switchMode();
+$('.powerSavingBox').click(function() {
+  thermostat.switchMode()
 });
 
 var increaseTemperature = function() {

@@ -1,31 +1,40 @@
 
-<html>
+<html class='fade-in'>
 <head>
   <title>Thermostat</title>
   <link rel='stylesheet' type='text/css' href='stylesheets/index.css'>
 </head>
 
 <body>
-  <div class='fade-in'>
+  <div>
     <!-- <label>City: </label><input id='cityForm' type='text' name='city'>
     <input id='citySubmit' type='submit' value='Submit'>
 
     <p>The temperature in <span id='cityActual'>London</span> is <span id='cityWeather'></span></p> -->
 
-    <span id='geoLocation'></span><br>
-    <span id='geoTemperature'></span><br>
-    <span>Thermostat temperature:</span><br>
-    <span id='temperature' class='orange'></span><br>
-
-    <button class='controller_button'>&#8657;</button>
-
-    <button class='controller_button'>&#8659;</button>
-
-    <button class="controller_button">&#8635;</button>
+    <tag class='fade-in first'>
+      <span id='geoLocation'></span><br>
+      <span id='geoTemperature'></span>
+    </tag>
 
     <br>
 
-    <button id='powerSavingBox'></button>
+    <tag class='fade-in second'>
+      <span>Thermostat:</span><br>
+      <span id='temperature' class='orange'></span>
+    </tag>
+
+    <br>
+
+    <button class='controller_button fade-in third'>&#8657;</button>
+
+    <button class='controller_button fade-in third'>&#8659;</button>
+
+    <button class="controller_button fade-in third">&#8635;</button>
+
+    <br>
+
+    <button class='powerSavingBox fade-in third'></button>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="thermostat.js"></script>
