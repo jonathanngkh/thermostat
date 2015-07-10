@@ -4,7 +4,7 @@ var Thermostat = function() {
 };
 
 Thermostat.prototype.show = function() {
-  return this.temperature;
+  return this.temperature + '&#8451;';
 };
 
 Thermostat.prototype.up = function() {

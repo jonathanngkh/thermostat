@@ -6,25 +6,30 @@
 </head>
 
 <body>
-  <label>City: </label><input id='cityForm' type='text' name='city'>
-  <input id='citySubmit' type='submit' value='Submit'>
+  <div class='fade-in'>
+    <!-- <label>City: </label><input id='cityForm' type='text' name='city'>
+    <input id='citySubmit' type='submit' value='Submit'>
 
-  <p>The temperature in <span id='cityActual'>London</span> is <span id='cityWeather'></span></p>
+    <p>The temperature in <span id='cityActual'>London</span> is <span id='cityWeather'></span></p> -->
 
-  <p>You are near <span id='geoLocation'></span>, where the temperature is <span id='geoTemperature'></span></p>
+    <span id='geoLocation'></span><br>
+    <span id='geoTemperature'></span><br>
+    <span>Thermostat temperature:</span><br>
+    <span id='temperature' class='orange'></span><br>
 
-  <p>Thermostat temperature: <span id='temperature' class='orange'></span></p>
+    <button class='controller_button'>&#8657;</button>
 
-  <button class='controller_button'>Up</button>
+    <button class='controller_button'>&#8659;</button>
 
-  <button class='controller_button'>Down</button>
+    <button class="controller_button">&#8635;</button>
 
-  <button class="controller_button">Reset</button>
+    <br>
 
-  <label><input type='checkbox' class='powerSavingBox' checked>Power Saving</label>
+    <button id='powerSavingBox'></button>
 
-  <script src="node_modules/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="thermostat.js"></script>
-  <script type="text/javascript" src="app.js" ></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="thermostat.js"></script>
+    <script type="text/javascript" src="app.js" ></script>
+  </div>
 </body>
 </html>

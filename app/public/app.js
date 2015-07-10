@@ -1,11 +1,7 @@
 var thermostat = new Thermostat();
-
 var buttons = $('.controller_button');
-
 var name = 'London'
-
 var latitude;
-
 var longitude;
 
 var currentLocation = function(Geoposition) {
@@ -17,10 +13,13 @@ var currentLocation = function(Geoposition) {
 var currentTemperature = function() {
   $.getJSON('http://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&units=metric',
     function(response) {
-      $('#geoTemperature').html(response.main.temp);
+      var roundedTemp = Math.floor(response.main.temp);
+      $('#geoTemperature').html(roundedTemp + '&#8451;');
       $('#geoLocation').html(response.name);
   });
 };
+
+$('#geoLocation').html('\r\n')
 
 navigator.geolocation.getCurrentPosition(currentLocation);
 
@@ -41,7 +40,7 @@ cityTemperature();
 
 $('#temperature').html(thermostat.show());
 
-$('.powerSavingBox').change(function() {
+$('#powerSavingBox').click(function() {
   thermostat.switchMode();
 });
 
@@ -64,7 +63,7 @@ var resetTemp = function() {
 };
 
 var colorChanger = function() {
-  var checkTemperature = thermostat.show();
+  var checkTemperature = thermostat.temperature;
   if (checkTemperature < 18) {
     $('#temperature').removeClass();
     $('#temperature').addClass('green');
