@@ -26,7 +26,7 @@
   height: 50px;
   width: 50px;
   font-size: 25px;
-  opacity: 0.9;
+  opacity: 0.85;
   border-radius: 10px;
   background-color: white;
 }
@@ -46,8 +46,8 @@ body {
   font-size: 50px;
   color: white;
   text-align: center;
-  background-image: url('../images/tube.gif');
-  background-position: top;
+  background-image: url('../images/china.gif');
+  background-position: top right;
   background-size: cover;
   background-repeat: no-repeat;
   line-height: 0.9
